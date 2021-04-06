@@ -5,6 +5,13 @@ class Exec:
     client = docker.from_env()
     input_command = None
     cnt = 0
+    count = 1
+
+    os.chdir("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs")
+    f_name = "output" + str(count)
+    current_name = "/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs"
+    count += 1
+    os.mkdir(os.path.join(current_name,f_name))
 
     def __init__(self):
         while(1):
