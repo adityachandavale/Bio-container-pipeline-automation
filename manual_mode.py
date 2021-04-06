@@ -43,9 +43,9 @@ class Exec:
                     self.cnt += 1
                 else:
                     print('Bioconda executed {} times'.format(self.cnt_bioconda))
-                    print('Bioconda executed {} times'.format(self.cnt_hisat2))
-                    print('Bioconda executed {} times'.format(self.cnt_stringtie))
-                    print('Bioconda executed {} times'.format(self.cnt_deseq2))
+                    print('hisat2 executed {} times'.format(self.cnt_hisat2))
+                    print('stringtie executed {} times'.format(self.cnt_stringtie))
+                    print('deseq2 executed {} times'.format(self.cnt_deseq2))
 
                     break
                     
