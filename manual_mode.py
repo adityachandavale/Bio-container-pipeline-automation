@@ -5,16 +5,29 @@ class Exec:
     client = docker.from_env()
     input_command = None
     cnt = 0
-    count = 1
+    cnt_bioconda = 0
+    cnt_hisat2 = 0
+    cnt_stringtie = 0
+    cnt_deseq2 = 0
+    
+    f = open("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs/counter.txt","r")
+    a = f.read()
+    b = int(a)+1
+
+    f1 = open("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs/counter.txt","w")
+    f1.write(str(b))
+    f1.close()
 
     os.chdir("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs")
-    f_name = "output" + str(count)
+    f_name = "output_genome" + str(b)
     current_name = "/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs"
-    count += 1
     os.mkdir(os.path.join(current_name,f_name))
+    os.chdir(f_name)
+
 
     def __init__(self):
         while(1):
+
             if self.cnt == 0:
                 function_input = input('Enter the Container to execute:')
                 if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda':
@@ -29,7 +42,11 @@ class Exec:
                     self.printing_return(function_input)
                     self.cnt += 1
                 else:
-                    print("bye")
+                    print('Bioconda executed {} times'.format(self.cnt_bioconda))
+                    print('Bioconda executed {} times'.format(self.cnt_hisat2))
+                    print('Bioconda executed {} times'.format(self.cnt_stringtie))
+                    print('Bioconda executed {} times'.format(self.cnt_deseq2))
+
                     break
                     
 
@@ -37,18 +54,22 @@ class Exec:
                 
     def bioconda(self):
         a = os.system(self.input_command)
+        self.cnt_bioconda =+ 1
         return a
 
     def hisat2(self):
         a = self.client.containers.run('336d8edb337f',self.input_command)
+        self.cnt_hisat2 += 1
         return a
 
     def stringtie(self):
         b = self.client.containers.run('3aec4555231e',self.input_command)
+        self.cnt_stringtie += 1
         return b
 
     def deseq2(self):
         c = self.client.containers.run('8d620dc67af7',self.input_command)
+        self.cnt_deseq2 += 1
         return c
 
     def printing_return(self,fun):
