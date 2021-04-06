@@ -1,0 +1,13 @@
+Date: 02nd April 2021
+This meeting covered a presentation from Ashwin and he explained in depth what pipeline architecture he was expecting.
+The project development had plenty insights.
+
+Links for containers:
+quay.io/biocontainers/stringtie:1.2.2--hd28b015_2
+quay.io/biocontainers/bioconductor-deseq2:1.20.0--r351hfc679d8_0
+https://biocontainers.pro/tools/hisat2
+quay.io/biocontainers/hisat2:2.0.4--py35_1
+quay.io/biocontainers/fastx_toolkit:0.0.14--hfc679d8_7
+
+Hisat2 Manual:
+http://daehwankimlab.github.io/hisat2/manual/
