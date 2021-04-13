@@ -1,5 +1,7 @@
 import os
 import os.path
+import logging
+import time
 
 from lib.hisat2_docker import hisat2
 from lib.stringtie_docker import stringtie
@@ -8,6 +10,7 @@ from lib.bioconda_py import bioconda
 from lib.fastx_toolkit_docker import fastx_toolkit
 
 class Exec:
+    logging.info('time of execution: ',time.time())
     input_command = None
     cnt = 0
     cnt_bioconda = 0
@@ -18,6 +21,7 @@ class Exec:
     
     path = os.path.abspath(os.path.join(os.getcwd(),'outputs'))
     os.chdir(path)
+    
     f = open("counter.txt","r")
     a = f.read()
     b = int(a)+1
@@ -42,6 +46,7 @@ class Exec:
                     self.cnt += 1
                 else:
                     print("Wrong container name\n enter again ")
+                    
             else:
                 input_choice = input('Do you want to execute another container?\n y / n\n')
                 if input_choice == 'y' or input_choice == 'Y':
@@ -57,7 +62,7 @@ class Exec:
 
                     break
                     
-        print("Total executions",self.cnt)               
+        print("Total executions",self.cnt)             
 
     def printing_return(self,fun):
         self.input_command = input('Enter the Container Command: ')
