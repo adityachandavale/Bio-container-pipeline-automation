@@ -1,0 +1,6 @@
+Date: 7/4/21
+
+
+Naming conv:
+CLI00N_Project_N_samplename
+CLI001_Project_1_samplename1

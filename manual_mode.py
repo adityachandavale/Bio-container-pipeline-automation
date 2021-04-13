@@ -1,8 +1,10 @@
-import docker
-import os
+from lib.hisat2_docker import hisat2
+from lib.stringtie_docker import stringtie
+from lib.deseq2_docker import deseq2
+from lib.bioconda_py import bioconda
 
 class Exec:
-    client = docker.from_env()
+    #client = docker.from_env()
     input_command = None
     cnt = 0
     cnt_bioconda = 0
@@ -10,17 +12,17 @@ class Exec:
     cnt_stringtie = 0
     cnt_deseq2 = 0
     
-    f = open("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs/counter.txt","r")
+    f = open("/outputs/counter.txt","r")
     a = f.read()
     b = int(a)+1
 
-    f1 = open("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs/counter.txt","w")
+    f1 = open("/outputs/counter.txt","w")
     f1.write(str(b))
     f1.close()
 
-    os.chdir("/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs")
+    os.chdir("/outputs")
     f_name = "output_genome" + str(b)
-    current_name = "/home/aditya/Documents/MSC-DS/Sem3/Bio-container-pipeline-automation/outputs"
+    current_name = "outputs"
     os.mkdir(os.path.join(current_name,f_name))
     os.chdir(f_name)
 
@@ -49,42 +51,25 @@ class Exec:
 
                     break
                     
-
-        print("Total executions",self.cnt)
-                
-    def bioconda(self):
-        a = os.system(self.input_command)
-        self.cnt_bioconda =+ 1
-        return a
-
-    def hisat2(self):
-        a = self.client.containers.run('336d8edb337f',self.input_command)
-        self.cnt_hisat2 += 1
-        return a
-
-    def stringtie(self):
-        b = self.client.containers.run('3aec4555231e',self.input_command)
-        self.cnt_stringtie += 1
-        return b
-
-    def deseq2(self):
-        c = self.client.containers.run('8d620dc67af7',self.input_command)
-        self.cnt_deseq2 += 1
-        return c
+        print("Total executions",self.cnt)               
 
     def printing_return(self,fun):
         self.input_command = input('Enter the Container Command')
         if fun == 'hisat2':
-            output_hisat = self.hisat2()
+            output_hisat = hisat2(self.input_command)
+            self.cnt_hisat2 += 1
             print(output_hisat)
         if fun == 'stringtie':
-            output_stringtie = self.stringtie()
+            output_stringtie = stringtie(self.input_command)
+            self.cnt_stringtie += 1
             print(output_stringtie)
         if fun == 'deseq2':
-            output_deseq2 = self.deseq2()
+            output_deseq2 = deseq2(self.input_command)
+            self.cnt_deseq2 += 1
             print(output_deseq2)
         if fun == 'bioconda':
-            output_bioconda = self.bioconda()
+            output_bioconda = bioconda(self.input_command)
+            self.cnt_bioconda += 1
             print(output_bioconda)
 
 class Test:
