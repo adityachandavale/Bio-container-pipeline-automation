@@ -3,5 +3,15 @@
     </head>
     <body>
         Hello this is Manual Page
+        <form action="http://localhost:5000/Manual" method="post">
+            <label for="containers">Choose a container:</label>
+            <select id="containers" name="containers">
+              <option value="hisat2">hisat2</option>
+              <option value="stringtie">Stringtie</option>
+              <option value="deseq">DESeq2</option>
+            </select> <br>
+            Enter your command as per your container selected :<input type="text" name="t1"><br>
+            <input type="submit" value="submit">
+        </form>
     </body>
 </html>

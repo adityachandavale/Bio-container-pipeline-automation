@@ -16,5 +16,9 @@ def myCheck():
         else:
             return render_template('Automation.html')
 
+@app.route('/Manual',methods=['POST','GET'])
+def manual():
+    
+
 if __name__=='__main__':
     app.run()
