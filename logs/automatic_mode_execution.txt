@@ -1,43 +1,9 @@
 
-Execution start time: [ 1618384297.4303603 ]
-Output folder name: output_genome2
-Execution start time: [ 1618384490.978254 ]
-Output folder name: output_genome3
-Bioconda executed 0 times
-hisat2 executed 0 times
-stringtie executed 0 times
-deseq2 executed 0 times
-fastx_toolkit executed 0 times
-Execution start time: [ 1618384547.794891 ]
-Output folder name: output_genome4
-Bioconda executed 0 times
-hisat2 executed 0 times
-stringtie executed 0 times
-deseq2 executed 0 times
-fastx_toolkit executed 0 times
-Execution start time: [ 1618384593.969218 ]
-Output folder name: output_genome5
-Execution start time: [ 1618384625.4776175 ]
-Output folder name: output_genome6
-Execution start time: [ 1618384637.531826 ]
-Output folder name: output_genome7
-Container command used: echo hello
-Container command used: echo hello
-Container command used: echo hello
-Container command used: echo hi
-Bioconda executed 0 times
-hisat2 executed 0 times
-stringtie executed 0 times
-deseq2 executed 0 times
-fastx_toolkit executed 0 times
-Execution start time: [ 1618384823.1042125 ]
-Output folder name: output_genome8
-Container command used: echo hello
-Container command used: echo hi
-Container command used: echo hi again
-Container command used: echo final hello
-Bioconda executed 0 times
-hisat2 executed 0 times
-stringtie executed 0 times
-deseq2 executed 0 times
-fastx_toolkit executed 0 times
+Execution start time: [ 1618395922.9004297 ]
+Output folder name: output_genome32
+Container command used: echo hihisat2 command used: echo hi
+Container command used: echo Hellohisat2 command used: echo Hello
+Container command used: echo final histringtie command used: echo final hi
+Container command used: echo byedeseq2 command used: echo bye
+Execution start time: [ 1618384068.2358134 ]
+Output folder name: output_genome1
