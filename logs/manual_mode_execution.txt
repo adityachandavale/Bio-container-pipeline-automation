@@ -18,3 +18,29 @@ fastx_toolkit executed 0 times
 Total executions 2
 
 Execution end time: [ 1618330929.5968373 ]
+Execution start time: [ 1618374666.8676908 ]
+Output folder name: output_genome1
+Name of container executed: hisat2
+Container command used: echo hi
+Bioconda executed 0 times
+hisat2 executed 1 times
+stringtie executed 0 times
+deseq2 executed 0 times
+fastx_toolkit executed 0 times
+Total executions 1
+
+Execution end time: [ 1618374681.7257764 ]
+Execution start time: [ 1618374970.4884226 ]
+Output folder name: output_genome2
+Name of container executed: hisat2
+Container command used: echo hi
+Name of container executed: asodubsd
+Error: Wrong container name specified.
+Bioconda executed 0 times
+hisat2 executed 1 times
+stringtie executed 0 times
+deseq2 executed 0 times
+fastx_toolkit executed 0 times
+Total executions 1
+
+Execution end time: [ 1618375010.2551942 ]
