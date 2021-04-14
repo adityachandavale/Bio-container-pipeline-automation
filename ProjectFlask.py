@@ -6,12 +6,15 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/index.html<name>')
+@app.route('/Choice',methods=['POST','GET'])
 def myCheck():
-    if(name=='Automation'):
-        return render_template('Automation.html')
-    else:
-        return render_template('Manual.html')
+    if(request.method=='POST'):
+        a = request.form['rd1']
+        print(a)
+        if(a=='Manual'):
+            return render_template('Manual.html')
+        else:
+            return render_template('Automation.html')
 
 if __name__=='__main__':
     app.run()
