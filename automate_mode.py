@@ -127,6 +127,7 @@ class auto_exec:
                 if self.multithread_cnt == 0:
                     time.sleep(1)
                 else:
+                    self.write_log()
                     exit()
 
         except KeyboardInterrupt:
