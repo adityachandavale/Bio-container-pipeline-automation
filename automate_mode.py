@@ -3,8 +3,7 @@ import os
 import os.path
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
-import threading
-import ctypes
+
 from lib.hisat2_docker import hisat2
 from lib.stringtie_docker import stringtie
 from lib.deseq2_docker import deseq2
@@ -25,6 +24,8 @@ class auto_exec:
     cnt_stringtie = 0
     cnt_deseq2 = 0
     cnt_fastx = 0
+
+    multithread_cnt = 0
 
     # --------------------------------------------------------------------------------------------------------------------
 
@@ -52,6 +53,7 @@ class auto_exec:
         self.printing_return('hisat2')
         self.event_handling()
         self.write_log()
+
     # ----------------------------------------------------------------------------------------------------------------------
 
     # Running the containers
@@ -105,10 +107,10 @@ class auto_exec:
                 self.printing_return('deseq2')
             if event.src_path.endswith('.csv'):
                 print("Pipeline generated csv succesfully")
-                automation_observer.raise_exception()
+                self.multithread_cnt = 1
 
 
-        def on_deleted(self,event):
+        def on_deleted(event):
             print(f"Event, {event.src_path} has been deleted")
 
         automation_event_handler.on_created = on_created
@@ -122,7 +124,11 @@ class auto_exec:
 
         try:
             while True:
-                time.sleep(1)
+                if self.multithread_cnt == 0:
+                    time.sleep(1)
+                else:
+                    exit()
+
         except KeyboardInterrupt:
             automation_observer.stop()
             automation_observer.join()
@@ -131,11 +137,11 @@ class auto_exec:
 
     # Writing logs
     def write_log(self):
-        log.write('\nBioconda executed {} times'.format(cnt_bioconda))
-        log.write('\nhisat2 executed {} times'.format(cnt_hisat2))
-        log.write('\nstringtie executed {} times'.format(cnt_stringtie))
-        log.write('\ndeseq2 executed {} times'.format(cnt_deseq2))
-        log.write('\nfastx_toolkit executed {} times'.format(cnt_fastx))
+        self.log.write('\nBioconda executed {} times'.format(self.cnt_bioconda))
+        self.log.write('\nhisat2 executed {} times'.format(self.cnt_hisat2))
+        self.log.write('\nstringtie executed {} times'.format(self.cnt_stringtie))
+        self.log.write('\ndeseq2 executed {} times'.format(self.cnt_deseq2))
+        self.log.write('\nfastx_toolkit executed {} times'.format(self.cnt_fastx)) 
 
 class test:
     a = auto_exec()

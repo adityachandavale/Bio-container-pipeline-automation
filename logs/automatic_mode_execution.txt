@@ -1,9 +1,0 @@
-
-Execution start time: [ 1618395922.9004297 ]
-Output folder name: output_genome32
-Container command used: echo hihisat2 command used: echo hi
-Container command used: echo Hellohisat2 command used: echo Hello
-Container command used: echo final histringtie command used: echo final hi
-Container command used: echo byedeseq2 command used: echo bye
-Execution start time: [ 1618384068.2358134 ]
-Output folder name: output_genome1
