@@ -34,7 +34,7 @@ class auto_exec:
     #os.chdir(path)
 
     # Reading counter number previously appended to file
-    f = open("E:\\New folder\\Bio-container-pipeline-automation\\outputs\\counter.txt","r")
+    f = open("outputs/counter.txt","r")
     a = f.read()
     b = int(a)+1
 
