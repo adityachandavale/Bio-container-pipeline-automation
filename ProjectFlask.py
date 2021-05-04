@@ -1,4 +1,6 @@
+import automate_mode
 from flask import Flask,render_template,request
+import manual_mode
 
 app = Flask(__name__)
 
@@ -18,7 +20,20 @@ def myCheck():
 
 @app.route('/Manual',methods=['POST','GET'])
 def manual():
-    
+    if(request.method=='POST'):
+        a=request.form['containers']
+        b=request.form['t1']
+
+        e = manual_mode.Exec(a,b)
+    return a+b
+
+
+@app.route('/Automation',methods=['POST','GET'])
+def auto():
+    if(request.method=='POST'):
+        a = request.form['t1']
+        ae = automate_mode.auto_exec(a)
+        return "Thank You"
 
 if __name__=='__main__':
     app.run()

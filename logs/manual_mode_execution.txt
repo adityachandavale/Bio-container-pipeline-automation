@@ -44,3 +44,11 @@ fastx_toolkit executed 0 times
 Total executions 1
 
 Execution end time: [ 1618375010.2551942 ]
+Execution start time: [ 1620122197.923931 ]
+Output folder name: output_genome53
+Execution start time: [ 1620122258.8078535 ]
+Output folder name: output_genome54
+Execution start time: [ 1620122351.5631034 ]
+Output folder name: output_genome55
+Execution start time: [ 1620122505.448975 ]
+Output folder name: output_genome56
