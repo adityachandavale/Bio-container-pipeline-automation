@@ -51,7 +51,7 @@ class Exec:
             #self.log.write("\nName of container executed: {}".format(function_input))
 
             #if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda' or function_input == 'fastx_toolkit':
-            out = self.printing_return(function_input,input_command)
+            out = self.printing_return(function_input)
             self.cnt += 1
             return out
             #else:
@@ -70,7 +70,7 @@ class Exec:
         #self.log.write("\nTotal executions {}".format(self.cnt))             
         #self.log.write("\n\nExecution end time: [ {} ]".format(str(time.time())))
 
-    def printing_return(self,fun,input_command):
+    def printing_return(self,fun):
         #self.input_command = input('Enter the Container Command: ')
         #self.log.write('\nContainer command used: {}'.format(self.input_command))
 
