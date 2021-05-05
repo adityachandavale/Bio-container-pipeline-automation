@@ -28,6 +28,10 @@ def manual():
         print(e)
     return "<html>Hello</html>"
 
+@app.route('/Choice/Manual/button/')
+def button_clicked():
+    print('Hello world!', file=sys.stderr)
+    return redirect('/')
 
 @app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
