@@ -34,16 +34,16 @@ class auto_exec:
     #os.chdir(path)
 
     # Reading counter number previously appended to file
-    f = open("outputs/counter.txt","r")
-    a = f.read()
-    b = int(a)+1
+    #f = open("outputs/counter.txt","r")
+    #a = f.read()
+    #b = int(a)+1
 
     # Writing a new number to be appended to current file.
-    f1 = open("counter.txt","w")
-    f1.write(str(b))
-    f1.close()
+    #f1 = open("counter.txt","w")
+    #f1.write(str(b))
+    #f1.close()
 
-    f_name = "output_genome" + str(b) # new appended folder name
+    #f_name = "output_genome" + str(b) # new appended folder name
     #os.mkdir(f_name) # create folder
     #log.write("\nOutput folder name: {}".format(f_name))
     #os.chdir(f_name) # Change program execution folder to newly created folder
