@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/Choice',methods=['POST','GET'])
+@app.route('https://version1-biocontainer-test.herokuapp.com/Choice',methods=['POST','GET'])
 def myCheck():
     if(request.method=='POST'):
         a = request.form['rd1']
@@ -18,7 +18,7 @@ def myCheck():
         else:
             return render_template('Automation.html')
 
-@app.route('/Manual',methods=['POST','GET'])
+@app.route('https://version1-biocontainer-test.herokuapp.com/Choice/Manual',methods=['POST','GET'])
 def manual():
     if(request.method=='POST'):
         a=request.form['containers']
@@ -28,7 +28,7 @@ def manual():
     return a+b
 
 
-@app.route('/Automation',methods=['POST','GET'])
+@app.route('https://version1-biocontainer-test.herokuapp.com/Choice/Automation',methods=['POST','GET'])
 def auto():
     if(request.method=='POST'):
         a = request.form['t1']
