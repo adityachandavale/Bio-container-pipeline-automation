@@ -1,7 +1,7 @@
 import automate_mode
 from flask import Flask,render_template,request
 import manual_mode
-import sys
+
 
 app = Flask(__name__)
 
@@ -28,10 +28,7 @@ def manual():
         e = manual_mode.Exec(a,b)
     return "<html>Hello</html>"
 
-@app.route('/Choice/Manual/button/')
-def button_clicked():
-    print('Hello world!', file=sys.stderr)
-    return redirect('/')
+
 
 @app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
