@@ -20,7 +20,7 @@ def myCheck():
 
 @app.route('/Manual',methods=['POST','GET'])
 def manual():
-    if(request.method=='GET'):
+    if(request.method=='POST'):
         a=request.form['containers']
         b=request.form['t1']
 
@@ -30,7 +30,7 @@ def manual():
 
 @app.route('/Automation',methods=['POST','GET'])
 def auto():
-    if(request.method=='GET'):
+    if(request.method=='POST'):
         a = request.form['t1']
         ae = automate_mode.auto_exec(a)
         return "Thank You"
