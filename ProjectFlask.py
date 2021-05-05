@@ -26,8 +26,8 @@ def manual():
         b=request.form['t1']
 
         e = manual_mode.Exec(a,b)
-        print(e)
-    return "<html>Hello</html>"
+        eo = e.printing_return(fun)
+    return eo
 
 @app.route('/Choice/Manual/button/')
 def button_clicked():

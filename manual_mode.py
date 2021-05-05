@@ -52,9 +52,9 @@ class Exec:
 
             #if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda' or function_input == 'fastx_toolkit':
             self.input_command = input_command
-            self.printing_return(function_input)
-            self.cnt += 1
-            
+            #out = self.printing_return(function_input)
+            #self.cnt += 1
+            #return out
             #else:
                 #print("Wrong container name\n enter again ")
                 #self.log.write("\nError: Wrong container name specified.")
@@ -80,23 +80,23 @@ class Exec:
             #output_hisat = print(self.input_command)
             self.cnt_hisat2 += 1
             #print(output_hisat)
-            #return "Hisat2 container successfully executed "
+            return "Hisat2 container successfully executed "
         if fun == 'stringtie':
             #output_stringtie = stringtie(self.input_command)
             #output_stringtie = print(self.input_command)
             self.cnt_stringtie += 1
             #print(output_stringtie)
-            #return "Stringtie container successfully executed "
+            return "Stringtie container successfully executed "
         if fun == 'deseq2':
             #output_deseq2 = deseq2(self.input_command)
             #output_deseq2 = print(self.input_command)
             self.cnt_deseq2 += 1
             #print(output_deseq2)
-            #return "Deseq2 container successfully executed "
+            return "Deseq2 container successfully executed "
         if fun == 'fastx_toolkit':
             #output_fastx = fastx_toolkit(self.input_command)
             #output_fastx = print(self.input_command)
             self.cnt_fastx += 1
             #print(output_fastx)
-            #return "fastx container successfully executed "
+            return "fastx container successfully executed "
 
