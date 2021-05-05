@@ -50,11 +50,12 @@ class Exec:
             #function_input = input('Enter the Name of the Container to execute: ')
             #self.log.write("\nName of container executed: {}".format(function_input))
 
-            if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda' or function_input == 'fastx_toolkit':
-                self.printing_return(function_input,input_command)
-                self.cnt += 1
-            else:
-                print("Wrong container name\n enter again ")
+            #if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda' or function_input == 'fastx_toolkit':
+            out = self.printing_return(function_input,input_command)
+            self.cnt += 1
+            return out
+            #else:
+                #print("Wrong container name\n enter again ")
                 #self.log.write("\nError: Wrong container name specified.")
                 
             #input_choice = input('Do you want to execute another container?\n y / n\n')
