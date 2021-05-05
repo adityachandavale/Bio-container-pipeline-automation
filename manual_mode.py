@@ -29,16 +29,16 @@ class Exec:
     #os.chdir(path)
     
     # Reading counter number previously appended to file
-    f = open("counter.txt","r")
-    a = f.read()
-    b = int(a)+1
+    #f = open("counter.txt","r")
+    #a = f.read()
+    #b = int(a)+1
 
     # Writing a new number to be appended to current file.
-    f1 = open("counter.txt","w")
-    f1.write(str(b))
-    f1.close()
+    #f1 = open("counter.txt","w")
+    #f1.write(str(b))
+    #f1.close()
 
-    f_name = "output_genome" + str(b) # new appended folder name
+    #f_name = "output_genome" + str(b) # new appended folder name
     #os.mkdir(f_name) # create folder
     #log.write("\nOutput folder name: {}".format(f_name))
     #os.chdir(f_name) # Change program execution folder to newly created folder
@@ -78,25 +78,25 @@ class Exec:
         if fun == 'hisat2':
             #output_hisat = hisat2(self.input_command)
             #output_hisat = print(self.input_command)
-            self.cnt_hisat2 += 1
+            #self.cnt_hisat2 += 1
             #print(output_hisat)
             return "Hisat2 container successfully executed "
         if fun == 'stringtie':
             #output_stringtie = stringtie(self.input_command)
             #output_stringtie = print(self.input_command)
-            self.cnt_stringtie += 1
+            #self.cnt_stringtie += 1
             #print(output_stringtie)
             return "Stringtie container successfully executed "
         if fun == 'deseq2':
             #output_deseq2 = deseq2(self.input_command)
             #output_deseq2 = print(self.input_command)
-            self.cnt_deseq2 += 1
+            #self.cnt_deseq2 += 1
             #print(output_deseq2)
             return "Deseq2 container successfully executed "
         if fun == 'fastx_toolkit':
             #output_fastx = fastx_toolkit(self.input_command)
             #output_fastx = print(self.input_command)
-            self.cnt_fastx += 1
+            #self.cnt_fastx += 1
             #print(output_fastx)
             return "fastx container successfully executed "
 
