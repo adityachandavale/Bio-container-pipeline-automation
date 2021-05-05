@@ -27,7 +27,7 @@ def manual():
 
         e = manual_mode.Exec(b)
         eo = e.printing_return(a)
-    return eo
+    return "Thank You"
 
 @app.route('/Choice/Manual/button/')
 def button_clicked():
