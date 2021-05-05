@@ -44,7 +44,7 @@ class Exec:
     #os.chdir(f_name) # Change program execution folder to newly created folder
 
 
-    def __init__(self,function_input,input_command):
+    def __init__(self,input_command):
         #while(1):
 
             #function_input = input('Enter the Name of the Container to execute: ')

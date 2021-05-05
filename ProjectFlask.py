@@ -25,8 +25,8 @@ def manual():
         a=request.form['containers']
         b=request.form['t1']
 
-        e = manual_mode.Exec(a,b)
-        eo = e.printing_return(fun)
+        e = manual_mode.Exec(b)
+        eo = e.printing_return(a)
     return eo
 
 @app.route('/Choice/Manual/button/')
