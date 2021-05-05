@@ -44,7 +44,7 @@ class Exec:
     #os.chdir(f_name) # Change program execution folder to newly created folder
 
 
-    def __init__(self,input_command):
+    def __init__(self,function_input,input_command):
         #while(1):
 
             #function_input = input('Enter the Name of the Container to execute: ')
@@ -52,9 +52,9 @@ class Exec:
 
             #if function_input == 'hisat2' or function_input == 'stringtie' or function_input == 'deseq2' or function_input == 'bioconda' or function_input == 'fastx_toolkit':
             self.input_command = input_command
-            #out = self.printing_return(function_input)
-            #self.cnt += 1
-            #return out
+            out = self.printing_return(function_input)
+            self.cnt += 1
+            return out
             #else:
                 #print("Wrong container name\n enter again ")
                 #self.log.write("\nError: Wrong container name specified.")

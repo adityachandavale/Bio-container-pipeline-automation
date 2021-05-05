@@ -25,10 +25,13 @@ def manual():
         a=request.form['containers']
         b=request.form['t1']
 
-        e = manual_mode.Exec(b)
-        eo = e.printing_return(a)
-    return "Thank You"
+        e = manual_mode.Exec(a,b)
+    return "<html>Hello</html>"
 
+@app.route('/Choice/Manual/button/')
+def button_clicked():
+    print('Hello world!', file=sys.stderr)
+    return redirect('/')
 
 @app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
