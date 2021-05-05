@@ -29,10 +29,6 @@ def manual():
         eo = e.printing_return(a)
     return "Thank You"
 
-@app.route('/Choice/Manual/button/')
-def button_clicked():
-    print('Hello world!', file=sys.stderr)
-    return redirect('/')
 
 @app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
