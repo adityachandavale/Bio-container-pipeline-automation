@@ -19,7 +19,7 @@ def myCheck():
         else:
             return render_template('Automation.html')
 
-@app.route('/Manual',methods=['POST','GET'])
+@app.route('/Choice/Manual',methods=['POST','GET'])
 def manual():
     if(request.method=='POST'):
         a=request.form['containers']
@@ -30,7 +30,7 @@ def manual():
 
 
 
-@app.route('/Automation',methods=['POST','GET'])
+@app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
     if(request.method=='POST'):
         a = request.form['t1']
