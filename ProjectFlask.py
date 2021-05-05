@@ -10,7 +10,7 @@ def index():
 
 @app.route('/Choice',methods=['POST','GET'])
 def myCheck():
-    if(request.method=='GET'):
+    if(request.method=='POST'):
         a = request.form['rd1']
         print(a)
         if(a=='Manual'):
