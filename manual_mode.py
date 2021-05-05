@@ -78,7 +78,7 @@ class Exec:
             #output_hisat = hisat2(self.input_command)
             #output_hisat = print(self.input_command)
             self.cnt_hisat2 += 1
-            #print(output_hisat)
+            print(output_hisat)
             return "Hisat2 container successfully executed "
         if fun == 'stringtie':
             #output_stringtie = stringtie(self.input_command)
