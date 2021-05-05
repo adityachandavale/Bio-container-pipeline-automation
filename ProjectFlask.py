@@ -18,17 +18,18 @@ def myCheck():
         else:
             return render_template('Automation.html')
 
-@app.route('/Manual',methods=['POST','GET'])
+@app.route('/Choice/Manual',methods=['POST','GET'])
 def manual():
     if(request.method=='POST'):
         a=request.form['containers']
         b=request.form['t1']
 
         e = manual_mode.Exec(a,b)
+        print(e)
     return "<html>Hello</html>"
 
 
-@app.route('/Automation',methods=['POST','GET'])
+@app.route('/Choice/Automation',methods=['POST','GET'])
 def auto():
     if(request.method=='POST'):
         a = request.form['t1']
