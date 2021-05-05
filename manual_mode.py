@@ -54,7 +54,7 @@ class Exec:
         self.input_command = input_command
         out = self.printing_return(function_input)
         self.cnt += 1
-        return out
+        #return out
             #else:
                 #print("Wrong container name\n enter again ")
                 #self.log.write("\nError: Wrong container name specified.")
