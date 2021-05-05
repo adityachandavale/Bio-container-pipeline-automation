@@ -25,7 +25,7 @@ def manual():
         b=request.form['t1']
 
         e = manual_mode.Exec(a,b)
-    return "Thank You"
+    return e
 
 
 @app.route('/Automation',methods=['POST','GET'])
