@@ -2,11 +2,11 @@ import os
 import os.path
 import time
 
-#from lib.hisat2_docker import hisat2
-#from lib.stringtie_docker import stringtie
-#from lib.deseq2_docker import deseq2
-#from lib.bioconda_py import bioconda
-#from lib.fastx_toolkit_docker import fastx_toolkit
+from lib.hisat2_docker import hisat2
+from lib.stringtie_docker import stringtie
+from lib.deseq2_docker import deseq2
+from lib.bioconda_py import bioconda
+from lib.fastx_toolkit_docker import fastx_toolkit
 
 class Exec:
     # Appending to log file for execution status.
@@ -75,27 +75,27 @@ class Exec:
         #self.log.write('\nContainer command used: {}'.format(self.input_command))
 
         if fun == 'hisat2':
-            #output_hisat = hisat2(self.input_command)
+            output_hisat = hisat2(self.input_command)
             #output_hisat = print(self.input_command)
             self.cnt_hisat2 += 1
-            print(output_hisat)
+            #print(output_hisat)
             return "Hisat2 container successfully executed "
         if fun == 'stringtie':
-            #output_stringtie = stringtie(self.input_command)
+            output_stringtie = stringtie(self.input_command)
             #output_stringtie = print(self.input_command)
             self.cnt_stringtie += 1
-            print(output_stringtie)
+            #print(output_stringtie)
             return "Stringtie container successfully executed "
         if fun == 'deseq2':
-            #output_deseq2 = deseq2(self.input_command)
+            output_deseq2 = deseq2(self.input_command)
             #output_deseq2 = print(self.input_command)
             self.cnt_deseq2 += 1
-            print(output_deseq2)
+            #print(output_deseq2)
             return "Deseq2 container successfully executed "
         if fun == 'fastx_toolkit':
-            #output_fastx = fastx_toolkit(self.input_command)
+            output_fastx = fastx_toolkit(self.input_command)
             #output_fastx = print(self.input_command)
             self.cnt_fastx += 1
-            print(output_fastx)
+            #print(output_fastx)
             return "fastx container successfully executed "
 
