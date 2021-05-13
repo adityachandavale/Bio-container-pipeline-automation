@@ -26,7 +26,8 @@ def manual():
         b=request.form['t1']
 
         e = manual_mode.Exec(a,b)
-        return "<html>Hello</html>"
+        c = e.printing_return(a)
+    return c
 
 
 
