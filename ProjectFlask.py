@@ -27,7 +27,7 @@ def manual():
 
         e = manual_mode.Exec(a,b)
         #c = e.printing_return(a)
-    return (a+" Container executed succesfully with query "+b)
+    return (a+" Container executed succesfully with query <html><b>"+b+"</b></html>")
 
 
 
