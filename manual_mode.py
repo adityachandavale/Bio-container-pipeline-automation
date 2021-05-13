@@ -12,13 +12,7 @@ class Exec:
     input_command = None
     
     # Declaring counters for execution tracking
-    cnt = 0
-    cnt_bioconda = 0
-    cnt_hisat2 = 0
-    cnt_stringtie = 0
-    cnt_deseq2 = 0
-    cnt_fastx = 0
-    
+
     # Changing path to Output directory
     path = os.path.abspath(os.path.join(os.getcwd(),'outputs'))
     os.chdir(path)
