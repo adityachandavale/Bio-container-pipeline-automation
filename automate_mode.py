@@ -3,8 +3,15 @@ import os
 import os.path
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
+import tkinter as tk
+from tkinter import filedialog
 
 from lib.printing_return import printing_return
+
+root = tk.Tk()
+root.withdraw()
+root.lift()
+root.focus_force()
 
 class auto_exec:
     input_command = None
@@ -13,23 +20,11 @@ class auto_exec:
 
     # --------------------------------------------------------------------------------------------------------------------
 
-    # Changing path to Output directory
-    path = os.path.abspath(os.path.join(os.getcwd(),'outputs'))
+    print('Select an output folder')
+    path = filedialog.askdirectory()
     os.chdir(path)
-    
-    # Reading counter number previously appended to file
-    f = open("counter.txt","r")
-    a = f.read()
-    b = int(a)+1
+    print('Path of folder selected:\n',path,'\n')
 
-    # Writing a new number to be appended to current file.
-    f1 = open("counter.txt","w")
-    f1.write(str(b))
-    f1.close()
-
-    f_name = "output_genome" + str(b) # new appended folder name
-    os.mkdir(f_name) # create folder
-    os.chdir(f_name) # Change program execution folder to newly created folder
 
     # ----------------------------------------------------------------------------------------------------------------------
     def __init__(self,input_command):
