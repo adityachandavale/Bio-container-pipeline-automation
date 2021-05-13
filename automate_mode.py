@@ -15,7 +15,8 @@ class auto_exec:
     # ----------------------------------------------------------------------------------------------------------------------
     def __init__(self,input_command):
     #def __init__(self):
-        #self.input_command = input_command
+        self.input_command = input_command
+        #self.input_command = input('Enter a command')
         #function_input = input('Enter the Name of the Container to execute: ')
         
         printing_return('hisat2',self.input_command)
@@ -33,6 +34,7 @@ class auto_exec:
 
         def on_created(event):
             print(f"Event, {event.src_path} has been created")
+            self.input_command = input('Enter a command')
             if event.src_path.endswith('.ht2'):
                 printing_return('hisat2',self.input_command)
             if event.src_path.endswith('.sam') or event.src_path.endswith('.bam'):
