@@ -1,27 +1,12 @@
 import os
 import os.path
 import time
-import tkinter as tk
-from tkinter import filedialog
 
 from lib.printing_return import printing_return
-
-root = tk.Tk()
-root.withdraw()
-root.lift()
-root.focus_force()
 
 class Exec:
 
     input_command = None
-
-    # Changing path to Output directory
-    print('Select an output folder')
-    path = filedialog.askdirectory()
-    os.chdir(path)
-    print('Path of folder selected:\n',path,'\n')
-
-
 
     def __init__(self,function_input,input_command):
         self.input_command = input_command

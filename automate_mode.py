@@ -3,27 +3,13 @@ import os
 import os.path
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
-import tkinter as tk
-from tkinter import filedialog
 
 from lib.printing_return import printing_return
-
-root = tk.Tk()
-root.withdraw()
-root.lift()
-root.focus_force()
 
 class auto_exec:
     input_command = None
 
     multithread_cnt = 0
-
-    # --------------------------------------------------------------------------------------------------------------------
-
-    print('Select an output folder')
-    path = filedialog.askdirectory()
-    os.chdir(path)
-    print('Path of folder selected:\n',path,'\n')
 
 
     # ----------------------------------------------------------------------------------------------------------------------

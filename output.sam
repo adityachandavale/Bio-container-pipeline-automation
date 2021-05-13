@@ -1,0 +1,5 @@
+@HD	VN:1.0	SO:unsorted
+@SQ	SN:NC_002695.2	LN:5498578
+@SQ	SN:NC_002128.1	LN:92721
+@SQ	SN:NC_002127.1	LN:3306
+@PG	ID:hisat2	PN:hisat2	VN:2.2.1	CL:"/home/grp6/anaconda3/envs/ddocent_env/bin/hisat2-align-s --wrapper basic-0 -x genome --threads 2 --passthrough --read-lengths 151 -U /home/grp6/MiniProject/Mini.fastq"

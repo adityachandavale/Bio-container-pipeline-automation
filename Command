@@ -1,0 +1,9 @@
+Stringtie:
+
+docker run 3aec4555231e /home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/output.sam -o /home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/filename1.gtf
+
+Hisat2:
+
+docker run 336d8edb337f hisat2-build --wrapper basic-0 -p 2 /home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/testing_files/sample.fasta genome
+
+docker run 336d8edb337f hisat2 --wrapper basic-0 -p 2 '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/testing_files/genome.fastq' --threads 2 --no-unal -S '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/output.sam'
