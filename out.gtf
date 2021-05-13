@@ -1,0 +1,2 @@
+# stringtie /home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/output.sam -o /home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/out.gtf
+# StringTie version 2.1.5
