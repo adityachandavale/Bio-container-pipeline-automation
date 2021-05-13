@@ -26,8 +26,8 @@ def manual():
         b=request.form['t1']
 
         e = manual_mode.Exec(a,b)
-        c = e.printing_return(a)
-    return c
+        #c = e.printing_return(a)
+    return (a+" Container executed succesfully with query "+b)
 
 
 
