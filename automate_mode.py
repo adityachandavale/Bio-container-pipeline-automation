@@ -87,6 +87,3 @@ class auto_exec:
         except KeyboardInterrupt:
             automation_observer.stop()
             automation_observer.join()
-
-class test:
-    a = auto_exec()
