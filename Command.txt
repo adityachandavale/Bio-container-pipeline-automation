@@ -9,3 +9,5 @@ hisat2-build '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-contain
 hisat2 -x genome -U '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/testing_files/genome.fastq' --threads 2 --no-unal -S '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/output.bam'
 
 stringtie '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/output.bam' -o '/home/aditya/Documents/MSC-DS/Sem3/Biocontainerproject/Bio-container-pipeline-automation/out.gtf'
+
+url("static/images/pexels-photo-4264212.jpeg")
