@@ -1,0 +1,2 @@
+# stringtie /home/grp6/Bio-container-pipeline-automation/testing_files/output.bam -o /home/grp6/Bio-container-pipeline-automation/testing_files/out.gtf
+# StringTie version 2.1.5
