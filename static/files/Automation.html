@@ -1,7 +1,24 @@
 <html>
     <head>
+	<style>
+		body
+		{
+			font-family:Georgia, serif;
+			background-color:grey;
+			font-size:40px;
+			color:black;
+			text-align:center;
+		
+		}
+		form
+		{
+			font-family:Times New Roman;
+			text-align:left;
+			font-size:16px
+		}
+	</style>
     </head>
-    <body>
+    <body style="background-image: url('{{ url_for('static', filename='images/pexels-photo-4264212.jpeg')}}"');>
         Hello this is Automation Page
         <form action="http://localhost:5000/Automation" method="post">
         Enter Hisat2 Build command <input type="text" name="t1"><br>
