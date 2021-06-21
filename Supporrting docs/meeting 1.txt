@@ -1,0 +1,25 @@
+Meeting 1
+
+Date: 29/3/21
+
+Topics discussed:
+
+Data formats.
+Pipeline basic architecture.
+Container names and tasks carried out.
+Input parameters and expected output.
+Flow of pipeline.
+
+Points to remember:
+
+Raw data will be provided to first container which generates 'FASTQ' format quality check which has to be selected manually.
+The obtained sequence is used as input to second container which is 'FastX toolkit' and is used to filter and extract bigger sequence for genome identification.
+This is provided as input to 3rd container called 'HiSat2', which is used to allign string in big genome and generates a 'SAM' or 'BAM' file.
+Next container accepts this as an input and counts number of fragments from genes. This is called 'Ball Gown' container.
+Final container is called 'DeSeq2' which runs R script inside the container and generates a csv as a final output of the pipeline.
+
+Links provided:
+https://biocontainers.pro/
+https://www.youtube.com/watch?v=6kEX1_17raY
+biostars.org
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6168365/
