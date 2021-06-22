@@ -1,27 +1,36 @@
 <html>
     <head>
-	<style>
-		body
+		<script>
+		function fun()
 		{
-			font-family:Georgia, serif;
-			background-color:grey;
-			font-size:40px;
-			color:black;
-			text-align:center;
-		
+			alert("Hello");
+
+			//F1.u1.focus();
 		}
-		form
-		{
-			font-family:Times New Roman;
-			text-align:left;
-			font-size:16px
-		}
-	</style>
+		</script>
+		<style>
+			body
+			{
+				font-family:Georgia, serif;
+				background-color:grey;
+				font-size:40px;
+				color:black;
+				text-align:center;
+			
+			}
+			form
+			{
+				font-family:Times New Roman;
+				text-align:left;
+				font-size:16px
+			}
+		</style>
     </head>
     <body>
         Hello this is Automation Page
         <form action="http://localhost:5000/Automation" method="post">
-        Enter Hisat2 Build command <input type="text" name="t1"><br>
+		Enter your unique ID <input type="text" name="u1"><br>
+        Enter Hisat2 Build command <input type="text" name="t1"><input type="file" id="filename" name="filename" value="Browse"><br>
         Enter Hisat2 command <input type="text" name="t2"><br>
         Enter Stringtie command <input type="text" name="t3"><br>
         Enter Deseq2 command <input type="text" name="t4"><br>

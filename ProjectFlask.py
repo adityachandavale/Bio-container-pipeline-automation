@@ -34,6 +34,13 @@ def manual():
         #c = e.printing_return(a)
     return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
 
+def find_files(filename, search_path):
+    result = []
+    for root, dir, files in os.walk(search_path):
+        if filename in files:
+            result.append(os.path.join(root, filename))
+    print("Result in function ",result)
+    return result
 
 
 @app.route('/Automation',methods=['POST','GET'])
@@ -47,6 +54,15 @@ def auto():
         b = request.form['t2']
         c = request.form['t3']
         d = request.form['t4']
+        u1 = request.form['u1']
+        fn = request.form['filename']
+
+        print("Usename ",type(u1))
+        print("Filename with path ",type(fn))
+
+        print(find_files(fn,u1))
+
+#        print("Result ",result)
         r = mm('hisat2',a)
         print("hisat2 executed")
         if r == 1:
