@@ -62,7 +62,7 @@ def auto():
         #print(result)
         #print("Result ",result)
 
-        if((u1 in res1 for res1 in result)):
+        if(result.find(u1)):
             r = mm('hisat2',a)
             print("hisat2 executed")
             if r == 1:
