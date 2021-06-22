@@ -60,7 +60,7 @@ def auto():
         print("Usename ",type(u1))
         print("Filename with path ",type(fn))
 
-        result = find_files(fn,"/home/query")
+        result = find_files(fn,"/home/grp6")
         print(result)
 
 #        print("Result ",result)
