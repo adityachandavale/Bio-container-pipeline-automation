@@ -60,7 +60,8 @@ def auto():
         print("Usename ",type(u1))
         print("Filename with path ",type(fn))
 
-        print(find_files(fn,u1))
+        result = find_files(fn,"/home/query")
+        print(result)
 
 #        print("Result ",result)
         r = mm('hisat2',a)
