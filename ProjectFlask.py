@@ -134,7 +134,7 @@ def auto():
                 
                 event_handling()'''
             else:
-            return "Please check whether u have selected the correct username or not "
+                return "Please check whether u have selected the correct username or not "
             
         
         return "Thank You"
