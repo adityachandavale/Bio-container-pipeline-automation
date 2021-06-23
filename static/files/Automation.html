@@ -3,8 +3,11 @@
 		<script>
 		function fun()
 		{
-			alert("Hello");
-
+			a = f1.u1.value;
+			//alert("Hello"+a);
+			document.getElementById("hisat").innerHTML = "Hisat2 Build command : hisat2-build '/home/query/"+a+"' output";
+			document.getElementById("hisat2").innerHTML = "Hisat2 command :hisat2 -x '/home/query/"+a+"/output' -U '/home/query/"+a+"' --threads 2 --no-unal -S '/home/query/"+a+"/output.sam'";
+			document.getElementById("stringtie").innerHTML = "Stringtie command : stringtie '/home/query/"+a+"/output.sam' -o '/home/query/"+a+"/output.gtf'"
 			//F1.u1.focus();
 		}
 		</script>
@@ -28,13 +31,14 @@
     </head>
     <body>
         Hello this is Automation Page
-        <form action="http://localhost:5000/Automation" method="post">
-		Enter your unique ID <input type="text" name="u1"><br>
-        Enter Hisat2 Build command <input type="text" name="t1"><input type="checkbox" id="ped" name="ped" value="Paired End Data">
-		<label for="vehicle1"> Paired End</label>
+        <form action="http://localhost:5000/Automation" method="post" id="f1">
+		Enter your unique ID <input type="text" id="u1" name="u1" onkeyup="fun()"><br>
+        <div id="hisat">Hisat2 Build command : hisat2-build </div><input type="text" name="t1" placeholder="Enter additional parameters" size="50">
+		<input type="checkbox" id="ped" name="ped" value="Paired End Data">
+		<label for="ped"> Paired End</label>
 		<br>
-        Enter Hisat2 command <input type="text" name="t2"><br>
-        Enter Stringtie command <input type="text" name="t3"><br>
+        <div id="hisat2">Hisat2 command : hisat2</div><input type="text" name="t2" placeholder="Enter additional parameters" size="50"><br>
+        <div id="stringtie">Stringtie command : stringtie</div><input type="text" name="t3" placeholder="Enter additional parameters" size="50"><br>
 
         <input type="submit" value="submit">
         </form>
