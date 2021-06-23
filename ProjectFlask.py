@@ -53,27 +53,26 @@ def auto():
         a = request.form['t1']
         b = request.form['t2']
         c = request.form['t3']
-        d = request.form['t4']
         u1 = request.form['u1']
-        fn = request.form['filename']
+        
         #print("Usename ",type(u1))
         #print("Filename with path ",type(fn))
-        result = find_files(fn,"/home/grp6")
+        #result = find_files(fn,"/home/grp6")
         #print(result)
         #print("Result ",result)
 
-        for i in result:
-            if(i.find(u1)):
-                r = mm('hisat2',a)
-                print("hisat2 executed")
-                if r == 1:
-                    r2 = mm('hisat2',b)
-                    print('Hisat2 executed successfully')
-                    if(r2 == 1):
-                        r3 = mm('stringtie',c)
-                        print('Stringtie executed successfully')
-                        if(r3 == 1):
-                            return "Thank You"
+        #for i in result:
+            #if(i.find(u1)):
+        r = mm('hisat2',a)
+        print("hisat2 executed")
+        if r == 1:
+            r2 = mm('hisat2',b)
+            print('Hisat2 executed successfully')
+            if(r2 == 1):
+                r3 = mm('stringtie',c)
+                print('Stringtie executed successfully')
+                if(r3 == 1):
+                    return "Thank You"
                 '''else:
                     print('Hisat2 not executed')
                 
@@ -133,8 +132,8 @@ def auto():
                 
                 
                 event_handling()'''
-            else:
-                return "Please check whether u have selected the correct username or not "
+            #else:
+                #return "Please check whether u have selected the correct username or not "
             
         
         return "Thank You"
