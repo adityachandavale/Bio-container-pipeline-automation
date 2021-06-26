@@ -63,7 +63,7 @@ def auto():
             r=mm('hisat',"hisat2-build \'/home/grp6/Advait/sample.fna\' output")
             print("hisat2 executed with command ",c1)
         else:
-            c1 = "hisat2-build \'{}\' output ".format(find_files("/home/grp6/"+u1,".fna"))+a
+            c1 = "hisat2-build \'{}\' output ".format(find_files("/home/grp6/"+u1,".fna"))
             print("C1 is",c1)
             r=mm('hisat',"hisat2-build \'/home/grp6/Advait/sample.fna\' output -p 2")
             print("hisat2 executed with command ",c1)
@@ -77,7 +77,7 @@ def auto():
                     return "hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output"
                 
         
-        return "hisat2 executed with command hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output"
+        return "hisat2 executed with command hisat2-build '"+find_files("/home/grp6/"+u1,".fna")+"' output"
 
 if __name__=='__main__':
     app.run()
