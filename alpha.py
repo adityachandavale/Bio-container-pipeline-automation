@@ -30,7 +30,6 @@ def manual():
     return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
 
 def find_files(filename, search_path):
-    result = ""
     for file in os.listdir(filename):
         if file.endswith(search_path):
             result = os.path.join(filename, file)
