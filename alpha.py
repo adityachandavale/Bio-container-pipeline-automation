@@ -56,23 +56,23 @@ def auto():
         #print("Result ",result)
 
         #if(find_files(u1,".fna")):
-            if(a==None or a==" "):
-                r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output")
-                print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output")
-            else:
-                r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output "+a)
-                print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output ",a)
-            if r == 1:
-                r2 = mm('hisat2',b)
-                print('Hisat2 executed successfully')
-                if(r2 == 1):
-                    r3 = mm('stringtie',c)
-                    print('Stringtie executed successfully')
-                    if(r3 == 1):
-                        return "Thank You"
+        if(a==None or a==" "):
+            r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output")
+            print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output")
+        else:
+            r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output "+a)
+            print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output ",a)
+        if r == 1:
+            r2 = mm('hisat2',b)
+            print('Hisat2 executed successfully')
+            if(r2 == 1):
+                r3 = mm('stringtie',c)
+                print('Stringtie executed successfully')
+                if(r3 == 1):
+                    return "hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output"
                 
         
-        return "Thank You"
+        return "hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output"
 
 if __name__=='__main__':
     app.run()
