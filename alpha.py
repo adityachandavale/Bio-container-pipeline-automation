@@ -60,12 +60,12 @@ def auto():
         if(a==None or a==" "):
             c1 = "hisat2-build \'{}\' output".format(find_files("/home/grp6/"+u1,".fna"))
             print("C1 is",c1)
-            r=mm('hisat',c1)
+            r=mm('hisat',"hisat2-build '/home/grp6/Advait/sample.fna' output")
             print("hisat2 executed with command ",c1)
         else:
             c1 = "hisat2-build \'{}\' output ".format(find_files("/home/grp6/"+u1,".fna"))+a
             print("C1 is",c1)
-            r=mm('hisat',c1)
+            r=mm('hisat',"hisat2-build '/home/grp6/Advait/sample.fna' output -p 2")
             print("hisat2 executed with command ",c1)
         if r == 1:
             r2 = mm('hisat2',b)
