@@ -30,11 +30,10 @@ def manual():
     return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
 
 def find_files(filename, search_path):
-    result = []
-    for root, dir, files in os.walk(search_path):
-        if filename in files:
-            result.append(os.path.join(root, filename))
-    print("Result in function ",result)
+    result = ""
+    for file in os.listdir(filename):
+    if file.endswith(search_path):
+        result = os.path.join(filename, file)
     return result
 
 
@@ -56,16 +55,21 @@ def auto():
         #print(result)
         #print("Result ",result)
 
-        r = mm('hisat2',a)
-        print("hisat2 executed")
-        if r == 1:
-            r2 = mm('hisat2',b)
-            print('Hisat2 executed successfully')
-            if(r2 == 1):
-                r3 = mm('stringtie',c)
-                print('Stringtie executed successfully')
-                if(r3 == 1):
-                    return "Thank You"
+        #if(find_files(u1,".fna")):
+            if(a==None or a==" "):
+                r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output")
+                print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output")
+            else:
+                r=mm('hisat',"hisat2-build '/home/grp6/"+u1+"/"+find_files("/home/grp6/"+u1,".fna")+"' output "+a)
+                print("hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output ",a)
+            if r == 1:
+                r2 = mm('hisat2',b)
+                print('Hisat2 executed successfully')
+                if(r2 == 1):
+                    r3 = mm('stringtie',c)
+                    print('Stringtie executed successfully')
+                    if(r3 == 1):
+                        return "Thank You"
                 
         
         return "Thank You"
