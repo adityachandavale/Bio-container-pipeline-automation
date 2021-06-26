@@ -54,19 +54,23 @@ def hisat2_first(a,u1):
 def hisat2_second(b,u1):
     result = find_files("/home/grp6/"+u1,".fastq")
     if(b==None or b==" "):
-        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.bam\'"
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.sam\'"
         print("C1 is",c1)
         r2 = mm('hisat2',c1)
         print('Hisat2 executed successfully')
     else:
-        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.bam\' "+b
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.sam\' "+b
         print("C1 is",c1)
         r2 = mm('hisat2',c1)
         print('Hisat2 executed successfully')
     return "hisat2 executed with command "+c1
 
 def stringtie_first(c,u1):
-    result = find_files("/home/grp6/"+u1+"/Output",".bam")
+    result = find_files("/home/grp6/"+u1+"/Output",".sam")
+    '''os.system("samtools view -bS "+result+">\'/home/grp6/"+u1+"/Output/out.bam\'")
+    os.system("samtools sort -@ N \'/home/grp6/"+u1+"/Output/out.bam\'>\'/home/grp6/"+u1+"/Output/out.bam\'")
+    os.system("samtools index \'/home/grp6/"+u1+"/Output/out.bam\' \'/home/grp6/"+u1+"/Output/output\'")
+    result = find_files("/home/grp6/"+u1+"/Output",".bam")'''
     if(c==None or c==" "):
         c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/Output/out.gtf\'"
         print("C1 is",c1)
@@ -96,7 +100,8 @@ def auto():
             os.mkdir(path)
             print("Folder is being created at ",path)
         except OSError as error:
-            print(error) 
+            print(error)
+         
         result1 = hisat2_first(a,u1)
         result2 = hisat2_second(b,u1)
         result3 = stringtie_first(c,u1)
