@@ -1,11 +1,7 @@
-#import automate_mode
 from flask import Flask,render_template,request
 from manual_mode import manual_mode as mm
-from watchdog.observers import Observer
-from watchdog.events import PatternMatchingEventHandler
 import os
 import os.path
-import time
 
 
 app = Flask(__name__)
@@ -31,7 +27,6 @@ def manual():
         b=request.form['t1']
 
         e = mm(a,b)
-        #c = e.printing_return(a)
     return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
 
 def find_files(filename, search_path):
@@ -61,8 +56,6 @@ def auto():
         #print(result)
         #print("Result ",result)
 
-        #for i in result:
-            #if(i.find(u1)):
         r = mm('hisat2',a)
         print("hisat2 executed")
         if r == 1:
@@ -73,68 +66,7 @@ def auto():
                 print('Stringtie executed successfully')
                 if(r3 == 1):
                     return "Thank You"
-                '''else:
-                    print('Hisat2 not executed')
                 
-                def event_handling():
-                    patterns = "*"
-                    ignore_patterns = ""
-                    ignore_directories = False
-                    case_sensitive = False
-                    automation_event_handler = PatternMatchingEventHandler(patterns,ignore_patterns,ignore_directories,case_sensitive)
-            
-                    def on_created(event):
-                        if event.src_path.endswith('*.ht2'):
-                            r = mm('hisat2',b)
-                            if r == 1:
-                                print('Hisat2 executed successfully')
-                            else:
-                                print('Hisat2 not executed')
-
-                        if event.src_path.endswith('.sam') or event.src_path.endswith('.bam'):
-                            r = mm('stringtie',c)
-                            if r == 1:
-                                print('Stringtie executed successfully')
-                            else:
-                                print('Stringtie not executed')
-
-                        if event.src_path.endswith('.gtf'):
-                            r = mm('deseq2',d)
-                            if r == 1:
-                                print('Deseq2 executed successfully')
-                            else:
-                                print('Deseq2 not executed')
-
-                        if event.src_path.endswith('.csv'):
-                            multithread_cnt = 1
-                            return "Pipeline successfully completed"
-                
-                    automation_event_handler.on_created = on_created        
-                    
-                    path="."
-                    go_recursively = True
-                    automation_observer = Observer()
-                    automation_observer.schedule(automation_event_handler, path, recursive=go_recursively)
-                    automation_observer.start()
-
-                    try:
-                        while True:
-                            if multithread_cnt == 0:
-                                time.sleep(1)
-                            else:
-                                break
-                                exit()
-                                
-                    except KeyboardInterrupt:
-                        automation_observer.stop()
-                        automation_observer.join()        
-                
-                
-                
-                event_handling()'''
-            #else:
-                #return "Please check whether u have selected the correct username or not "
-            
         
         return "Thank You"
 
