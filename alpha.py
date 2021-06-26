@@ -30,13 +30,55 @@ def manual():
     return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
 
 def find_files(filename, search_path):
+    result = ""
     for file in os.listdir(filename):
         if file.endswith(search_path):
             result = os.path.join(filename, file)
     print("function result",result)
     return result
 
+def hisat2_first(a,u1):
+    result = find_files("/home/grp6/"+u1,".fna")
+    if(a==None or a==" "):
+        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/output\'"
+        print("C1 is",c1)
+        r=mm('hisat2',c1)
+        print("hisat2 executed with command ",c1)
+    else:
+        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/output\' "+a
+        print("C1 is",c1)
+        r=mm('hisat2',c1)
+        print("hisat2 executed with command ",c1)
+    return "hisat2 executed with command "+c1
 
+def hisat2_second(b,u1):
+    result = find_files("/home/grp6/"+u1,".fastq")
+    if(b==None or b==" "):
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/output.sam\'"
+        print("C1 is",c1)
+        r2 = mm('hisat2',c1)
+        print('Hisat2 executed successfully')
+    else:
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/output.sam\' "+b
+        print("C1 is",c1)
+        r2 = mm('hisat2',c1)
+        print('Hisat2 executed successfully')
+    return "hisat2 executed with command "+c1
+
+def stringtie_first(c,u1):
+    result = find_files("/home/grp6/"+u1,".sam")
+    if(c==None or c==" "):
+        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/out.gtf\'"
+        print("C1 is",c1)
+        r2 = mm('stringtie',c1)
+        print('Stringtie executed successfully')
+    else:
+        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/out.gtf\' "+c
+        print("C1 is",c1)
+        r2 = mm('stringtie',c1)
+        print('Stringtie executed successfully')
+    return "stringtie executed with command "+c1
+                                   
 @app.route('/Automation',methods=['POST','GET'])
 def auto():
     if(request.method=='POST'):
@@ -49,35 +91,10 @@ def auto():
         c = request.form['t3']
         u1 = request.form['u1']
         
-        #print("Usename ",type(u1))
-        #print("Filename with path ",type(fn))
-        #result = find_files(fn,"/home/grp6")
-        #print(result)
-        #print("Result ",result)
-
-        #if(find_files(u1,".fna")):
-        if(a==None or a==" "):
-            result = find_files("/home/grp6/"+u1,".fna")
-            c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/output\'"
-            print("C1 is",c1)
-            r=mm('hisat',c1)
-            print("hisat2 executed with command ",c1)
-        else:
-            c1 = "hisat2-build \'"+find_files("/home/grp6/"+u1,".fna")+"\' \'/home/grp6/"+u1+"/output\' "+a
-            print("C1 is",c1)
-            r=mm('hisat',c1)
-            print("hisat2 executed with command ",c1)
-        if r == 1:
-            r2 = mm('hisat2',b)
-            print('Hisat2 executed successfully')
-            if(r2 == 1):
-                r3 = mm('stringtie',c)
-                print('Stringtie executed successfully')
-                if(r3 == 1):
-                    return "hisat2 executed with command hisat2-build '/home/grp6/",u1,"/",find_files("/home/grp6/"+u1,".fna"),"' output"
-                
-        
-        return "hisat2 executed with command hisat2-build '"+find_files("/home/grp6/"+u1,".fna")+"' output"
-
+        result1 = hisat2_first(a,u1)
+        result2 = hisat2_second(b,u1)
+        result3 = stringtie_first(c,u1)
+        return result1+"<br>"+result2+"<br>"+result3
+    
 if __name__=='__main__':
     app.run()
