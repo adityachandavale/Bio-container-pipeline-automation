@@ -63,7 +63,7 @@ def auto():
             r=mm('hisat',c1)
             print("hisat2 executed with command ",c1)
         else:
-            c1 = "hisat2-build \'{}\' output".format(find_files("/home/grp6/"+u1,".fna"))+a
+            c1 = "hisat2-build \'{}\' output ".format(find_files("/home/grp6/"+u1,".fna"))+a
             print("C1 is",c1)
             r=mm('hisat',c1)
             print("hisat2 executed with command ",c1)
