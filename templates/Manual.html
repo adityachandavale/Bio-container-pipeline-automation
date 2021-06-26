@@ -4,7 +4,7 @@
 		body
 		{
 			font-family:Georgia, serif;
-			background-color:grey;
+			div {background-image: url('templates\shutterstock_407554567.jpg');}
 			font-size:40px;
 			color:black;
 			text-align:center;
@@ -19,16 +19,19 @@
 	</style>
     </head>
     <body>
-        Hello this is Manual Page
+        
+        Manual Mode <br> <br>
         <form action="http://localhost:5000/Manual" method="post">
+            <center> <br> <br>  <br> <br>  <br> <br>  <br> <br> 
             <label for="containers">Choose a container:
             <select id="containers" name="containers">
               <option value="hisat2">hisat2</option>
               <option value="stringtie">Stringtie</option>
               <option value="deseq2">DESeq2</option>
               <option value="fastx_toolkit">fastx_toolkit</option>
-            </select></label> <br>
-            Enter your command as per your container selected :<input type="text" name="t1"><br>
+            </select></label> <br> <br>
+            Enter your command as per your container selected :<br><input type="text" name="t1"><br>
+            <br>
             <input type="submit" value="submit">
         </form>
     </body>
