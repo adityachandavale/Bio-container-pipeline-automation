@@ -58,12 +58,12 @@ def auto():
 
         #if(find_files(u1,".fna")):
         if(a==None or a==" "):
-            c1 = "hisat2-build '{}' output".format(find_files("/home/grp6/"+u1,".fna"))
+            c1 = ""+"hisat2-build '{}' output".format(find_files("/home/grp6/"+u1,".fna"))
             print("C1 is",c1)
             r=mm('hisat',c1)
             print("hisat2 executed with command ",c1)
         else:
-            c1 = "hisat2-build '{}' output".format(find_files("/home/grp6/"+u1,".fna"))+a
+            c1 = ""+"hisat2-build '{}' output".format(find_files("/home/grp6/"+u1,".fna"))+a
             print("C1 is",c1)
             r=mm('hisat',c1)
             print("hisat2 executed with command ",c1)
