@@ -32,8 +32,8 @@ def manual():
 def find_files(filename, search_path):
     result = ""
     for file in os.listdir(filename):
-    if file.endswith(search_path):
-        result = os.path.join(filename, file)
+        if file.endswith(search_path):
+            result = os.path.join(filename, file)
     return result
 
 
