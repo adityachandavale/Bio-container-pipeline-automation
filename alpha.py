@@ -34,7 +34,7 @@ def find_files(filename, search_path):
     for file in os.listdir(filename):
         if file.endswith(search_path):
             result = os.path.join(filename, file)
-            print("function result ",result)
+            print("function result",result)
     return result
 
 
