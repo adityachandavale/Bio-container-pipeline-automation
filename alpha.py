@@ -40,12 +40,12 @@ def find_files(filename, search_path):
 def hisat2_first(a,u1):
     result = find_files("/home/grp6/"+u1,".fna")
     if(a==None or a==" "):
-        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/output\'"
+        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/Output/output\'"
         print("C1 is",c1)
         r=mm('hisat2',c1)
         print("hisat2 executed with command ",c1)
     else:
-        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/output\' "+a
+        c1 = "hisat2-build \'"+result+"\' \'/home/grp6/"+u1+"/Output/output\' "+a
         print("C1 is",c1)
         r=mm('hisat2',c1)
         print("hisat2 executed with command ",c1)
@@ -54,26 +54,26 @@ def hisat2_first(a,u1):
 def hisat2_second(b,u1):
     result = find_files("/home/grp6/"+u1,".fastq")
     if(b==None or b==" "):
-        c1 = "hisat2 -x \'/home/grp6/"+u1+"/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/output.sam\'"
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.bam\'"
         print("C1 is",c1)
         r2 = mm('hisat2',c1)
         print('Hisat2 executed successfully')
     else:
-        c1 = "hisat2 -x \'/home/grp6/"+u1+"/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/output.sam\' "+b
+        c1 = "hisat2 -x \'/home/grp6/"+u1+"/Output/output\' -U \'"+result+"\' --threads 2 --no-unal -S \'/home/grp6/"+u1+"/Output/output.bam\' "+b
         print("C1 is",c1)
         r2 = mm('hisat2',c1)
         print('Hisat2 executed successfully')
     return "hisat2 executed with command "+c1
 
 def stringtie_first(c,u1):
-    result = find_files("/home/grp6/"+u1,".sam")
+    result = find_files("/home/grp6/"+u1+"/Output",".bam")
     if(c==None or c==" "):
-        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/out.gtf\'"
+        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/Output/out.gtf\'"
         print("C1 is",c1)
         r2 = mm('stringtie',c1)
         print('Stringtie executed successfully')
     else:
-        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/out.gtf\' "+c
+        c1 = "stringtie \'"+result+"\' -o \'/home/grp6/"+u1+"/Output/out.gtf\' "+c
         print("C1 is",c1)
         r2 = mm('stringtie',c1)
         print('Stringtie executed successfully')
@@ -91,6 +91,12 @@ def auto():
         c = request.form['t3']
         u1 = request.form['u1']
         
+        path = os.path.join("/home/grp6/"+u1, "Output")
+        try:
+            os.mkdir(path)
+            print("Folder is being created at ",path)
+        except OSError as error:
+            print(error) 
         result1 = hisat2_first(a,u1)
         result2 = hisat2_second(b,u1)
         result3 = stringtie_first(c,u1)
