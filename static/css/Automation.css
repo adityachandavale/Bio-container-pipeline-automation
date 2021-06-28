@@ -1,0 +1,14 @@
+body
+{
+	font-family:Georgia, serif;
+	font-size:40px;
+	color:black;
+	text-align:center;
+    background: url("{{ url_for('static', filename='images/pexels-photo-4264212.jpeg')}}");
+}
+form
+{
+	font-family:"Times New Roman";
+	text-align:left;
+	font-size:16px;
+}

@@ -1,36 +1,20 @@
 <html>
     <head>
-	<style>
-		body
-		{
-			font-family:Georgia, serif;
-			
-			font-size:40px;
-			color:black;
-			text-align:center;
-            background-image: url('static/images/bg.jpg')
-		}
-		form
-		{
-			font-family:Times New Roman;
-			text-align:left;
-			font-size:16px
-		}
-	</style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Automation.css')}}">
     </head>
     <body>
-        
-        Manual Mode <br> <br>
-        <form action="http://localhost:5000/Manual" method="post">
-            <center> <br> <br>  <br> <br>  <br> <br>  <br> <br> 
-            <label for="containers">Choose a container:
+        <p style="font-size:65px;"></p>Manual Mode</p> 
+        <form action="http://localhost:5000/Manual" method="post" style="font-size: 100px;">
+            <br> <br>  
+                <label for="containers">Choose a container:
             <select id="containers" name="containers">
               <option value="hisat2">hisat2</option>
               <option value="stringtie">Stringtie</option>
               <option value="deseq2">DESeq2</option>
               <option value="fastx_toolkit">fastx_toolkit</option>
-            </select></label> <br> <br>
+            </select></label> <br> <br>  <br> <br>  <br> <br> 
             Enter your command as per your container selected :<br><input type="text" name="t1"><br>
+            <br>
             <br>
             <input type="submit" value="submit">
         </form>
