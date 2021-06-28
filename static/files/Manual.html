@@ -1,6 +1,30 @@
 <html>
     <head>
-        <link rel="stylesheet" href="{% static/css '/Automation.css' %}">
+        <style>
+            body
+            {
+                font-family:Georgia, serif;
+                background-color:grey;
+                font-size:40px;
+                color:black;
+                text-align:center;
+            
+            }
+            form
+            {
+                font-family:Times New Roman;
+                text-align:center;
+                font-size:25px;
+            }
+            select
+            {
+                font-size: 20px;
+            }
+            input
+            {
+                font-size: 25px;
+            }
+        </style>
     </head>
     <body>
         <p>Manual Mode</p> 
@@ -12,10 +36,8 @@
               <option value="deseq2">DESeq2</option>
               <option value="fastx_toolkit">fastx_toolkit</option>
             </select></label><br>  <br> <br> 
-            Enter your command as per your container selected :<br><input type="text" name="t1"><br>
-            <br>
-            <br>
-            <input type="submit" value="submit" width="20px" height="20px">
+            Enter your command as per your container selected :<input type="text" name="t1"><br>
+            <br><input type="submit" value="submit" width="20" height="20">
         </form>
     </body>
 </html>

@@ -1,42 +1,46 @@
 <html>
     <head>
 		<script>
-		function fun()
-		{
-			a = f1.u1.value;
-			//alert("Hello"+a);
-			document.getElementById("hisat").innerHTML = "Hisat2 Build command : hisat2-build '/home/query/"+a+"' output";
-			document.getElementById("hisat2").innerHTML = "Hisat2 command :hisat2 -x '/home/query/"+a+"/output' -U '/home/query/"+a+"' --threads 2 --no-unal -S '/home/query/"+a+"/output.sam'";
-			document.getElementById("stringtie").innerHTML = "Stringtie command : stringtie '/home/query/"+a+"/output.sam' -o '/home/query/"+a+"/output.gtf'"
-			//F1.u1.focus();
-		}
-		</script>
-		<style>
-			body
+			function fun()
 			{
-				font-family:Georgia, serif;
-				background-color:grey;
-				font-size:40px;
-				color:black;
-				text-align:center;
-			
+				a = f1.u1.value;
+				//alert("Hello"+a);
+				document.getElementById("hisat").innerHTML = "Hisat2 Build command : hisat2-build '/home/query/"+a+"' '/home/query/"+a+"/Output/output";
+				document.getElementById("hisat2").innerHTML = "Hisat2 command :hisat2 -x '/home/query/"+a+"/Output/output' -U '/home/query/"+a+"' --threads 2 --no-unal -S '/home/query/"+a+"/Output/output.sam'";
+				document.getElementById("stringtie").innerHTML = "Stringtie command : stringtie '/home/query/"+a+"/Output/output.sam' -o '/home/query/"+a+"/Output/output.gtf'"
+				//F1.u1.focus();
 			}
-			form
-			{
-				font-family:Times New Roman;
-				text-align:left;
-				font-size:16px;
-			}
-		</style>
-    </head>
+			</script>
+			<style>
+				body
+				{
+					font-family:Georgia, serif;
+					background-color:grey;
+					font-size:40px;
+					color:black;
+					text-align:center;
+				}
+				form
+				{
+					font-family:Times New Roman;
+					text-align:center;
+					font-size:25px;
+				}
+				input
+            	{
+                	font-size: 25px;
+            	}
+			</style>
+	</head>
     <body>
-        Hello this is Automation Page 
-		 <br> <br>  <br><br>
+        Automation Page 
+	  	<br><br>
         <form action="http://localhost:5000/Automation" method="post" id="f1">
-		Enter your unique ID <input type="text" id="u1" name="u1" onkeyup="fun()"><br>
+		Enter your unique ID <input type="text" id="u1" name="u1" onkeyup="fun()"><br><br>
         <div id="hisat">Hisat2 Build command : hisat2-build </div><input type="text" name="t1" placeholder="Enter additional parameters" size="50">
-		<br>
-        <div id="hisat2">Hisat2 command : hisat2</div><input type="text" name="t2" placeholder="Enter additional parameters" size="50"><br>
+		<br><br>
+        <div id="hisat2">Hisat2 command : hisat2</div><input type="text" name="t2" placeholder="Enter additional parameters" size="50">
+		<br><br>
         <div id="stringtie">Stringtie command : stringtie</div><input type="text" name="t3" placeholder="Enter additional parameters" size="50"><br>
 		<br>
 
