@@ -1,10 +1,10 @@
 <html>
     <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Automation.css')}}">
+    <link rel="stylesheet" href="{{ url_for('/static', filename='/css/Automation.css')}}">
     </head>
     <body>
         <p style="font-size:65px;"></p>Manual Mode</p> 
-        <form action="http://localhost:5000/Manual" method="post" style="font-size: 100px;">
+        <form action="http://localhost:5000/Manual" method="post" style="font-size: 20px;">
             <br> <br>  
                 <label for="containers">Choose a container:
             <select id="containers" name="containers">
