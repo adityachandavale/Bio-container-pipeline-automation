@@ -28,7 +28,7 @@ def manual():
         b=request.form['t1']
 
         e = mm(a,b)
-    return ("<html><b>"+a+"</b></html> Container executed succesfully with query <html><b>"+b+"</b></html>")
+    return ("<html><b>"+a+"</b></html> Container executed succesfully with query(if files are not created then check the input file path or terminal) <html><b>"+b+"</b></html>")
 
 def find_files(filename, search_path):
     result = ""
